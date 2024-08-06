@@ -1,0 +1,99 @@
+---
+swagger: '2.0'
+info:
+  title: Webshell Trigger API
+  description: |
+    API to exploit potential vulnerabilities for downloading and executing a webshell.
+
+  version: 1.0
+basePath: https://testapi.tbcpay.ge/
+produces:
+- application/json
+consumes:
+- application/json
+security:
+- basicAuth: []
+paths:
+  "/api/swagger/index.html":
+    get:
+      responses:
+        '200':
+          description: Potential endpoint for file download trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "Webshell download attempted"
+        '500':
+          description: Error occurred
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error message details"
+      tags:
+      - Exploitation
+      operationId: triggerDownload
+      summary: Attempts to trigger a download using an existing endpoint
+
+  "/swagger/v1/swagger.json":
+    get:
+      responses:
+        '200':
+          description: Potential endpoint for file download trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "Webshell download attempted"
+        '500':
+          description: Error occurred
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error message details"
+      tags:
+      - Exploitation
+      operationId: triggerDownload
+      summary: Attempts to trigger a download using an existing endpoint
+
+  "/swagger/package.json":
+    get:
+      responses:
+        '200':
+          description: Potential endpoint for file download trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "Webshell download attempted"
+        '500':
+          description: Error occurred
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error message details"
+      tags:
+      - Exploitation
+      operationId: triggerDownload
+      summary: Attempts to trigger a download using an existing endpoint
