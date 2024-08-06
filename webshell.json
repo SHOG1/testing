@@ -1,0 +1,9 @@
+{
+    "url": "https://raw.githubusercontent.com/SHOG1/testing/main/webshell.yaml",
+    "urls": [
+        {
+            "url": "https://raw.githubusercontent.com/SHOG1/testing/main/webshell.yaml",
+            "name": "Foo"
+        }
+    ]
+}
